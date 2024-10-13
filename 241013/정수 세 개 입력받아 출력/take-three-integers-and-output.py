@@ -1,4 +1,4 @@
-a, b, c = tuple(map(int, input().split()))
+a, b = tuple(map(int, input().split()))
+c = int(input())
 
-print(a, b)
-print(c)
+print(a, b, c)
