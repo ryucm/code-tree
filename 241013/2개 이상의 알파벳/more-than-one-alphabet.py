@@ -10,7 +10,7 @@ def is_dupl(A):
                 count += 1
     return count
 
-if is_dupl:
+if is_dupl(A):
     print("Yes")
 else:
     print("No")
