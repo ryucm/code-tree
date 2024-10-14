@@ -9,6 +9,7 @@ def get_index(string, target):
             if string[i + j] != target[j]:
                 th = False
                 index = -1
+                break
             else:
                 th = True
                 if index == -1:
