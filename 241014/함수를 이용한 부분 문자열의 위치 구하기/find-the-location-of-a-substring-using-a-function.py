@@ -13,6 +13,8 @@ def get_index(string, target):
                 if th and index == -1:
                     index = i
                 th = True
+        if th and index != -1:
+            return index
     return index
 
 print(get_index(str1, str2))
