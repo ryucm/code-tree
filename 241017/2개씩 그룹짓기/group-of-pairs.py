@@ -2,4 +2,4 @@ N = int(input())
 
 arr = sorted(list(map(int,input().split())), reverse=True)
 
-print(arr[1] + arr[-2])
+print(arr[(len(arr) - (len(arr) // 2))] + arr[(len(arr) - (len(arr) // 2)) -1])
