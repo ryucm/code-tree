@@ -1,0 +1,6 @@
+input()
+arr = list(map(int, input().split()))
+arr.sort()
+print(" ".join(map(str, arr)))
+arr.sort(reverse=True)
+print(" ".join(map(str, arr)))
