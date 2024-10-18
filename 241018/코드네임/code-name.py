@@ -1,11 +1,16 @@
 class Human():
-    def __init__(self, name, score):
+    def __init__(self, name="", score=100):
         self.name=name
         self.score=score
 
-result = []
+human_list = []
 for i in range(5):
     name, score = input().split()
-    result.append(Human(name, score))
+    human_list.append(Human(name, int(score)))
 
-print(result[0].name, result[0].score)
+result = Human()
+for h in human_list:
+    if h.score < result.score:
+        result = h
+
+print(result.name, result.score)
