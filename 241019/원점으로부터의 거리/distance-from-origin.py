@@ -11,6 +11,6 @@ for i in range(1, n+1):
     x, y = tuple(map(int, input().split()))
     result.append(F(x, y, i))
 
-result.sort(key=lambda x: x.x + x.y)
+result.sort(key=lambda x: (x.x + x.y, x.number))
 for i in result:
     print(f"{i.number}")
