@@ -6,13 +6,12 @@ idx = 1000 * 100
 for i in range(n):
     x, o = input().split()
     x = int(x)
-
     if o == 'L':
         for j in range(idx-x+1, idx+1):
             # print(j, 'W')
             arr[j] = -1
-        idx -= x+1
-        print(idx)
+        # print(f"{idx} - {x} = {idx-x}")
+        idx -= x -1
     
     else:
         for j in range(idx, idx+x):
