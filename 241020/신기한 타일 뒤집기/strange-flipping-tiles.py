@@ -9,17 +9,17 @@ for i in range(n):
 
     if o == 'L':
         for j in range(idx-x+1, idx+1):
-            print(j, 'W')
+            # print(j, 'W')
             arr[j] = -1
         idx -= x
-        print(idx)
+        # print(idx)
     
     else:
         for j in range(idx, idx+x):
-            print(j, 'B')
+            # print(j, 'B')
             arr[j] = 1
         idx += (x-1)
-        print(idx)
+        # print(idx)
 
 white = 0
 black = 0
