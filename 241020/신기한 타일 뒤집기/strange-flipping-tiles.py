@@ -11,7 +11,7 @@ for i in range(n):
         for j in range(idx-x+1, idx+1):
             # print(j, 'W')
             arr[j] = -1
-        idx -= x+!
+        idx -= x+1
         print(idx)
     
     else:
