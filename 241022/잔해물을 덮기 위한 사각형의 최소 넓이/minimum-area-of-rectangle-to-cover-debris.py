@@ -25,4 +25,4 @@ for x in range(2001):
     max_x = x if cnt > 0 and x > max_x else max_x
     min_x = x if cnt > 0 and x < min_x else min_x
     
-print((max_x-min_x-1) * (max_y-min_y-1) if max_x or max_y else 0)
+print((max_x-(min_x-1)) * (max_y-(min_y-1)) if max_x or max_y else 0)
