@@ -12,7 +12,7 @@ for i in range(2):
             else:
                 arr[x][y] = 0
 
-max_x = max_y = -1000
+max_x = max_y = 0
 min_x = min_y = 2002
 for x in range(2001):
     cnt = 0
