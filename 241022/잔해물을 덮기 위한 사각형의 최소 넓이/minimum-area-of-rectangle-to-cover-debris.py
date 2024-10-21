@@ -9,22 +9,21 @@ for i in range(2):
             
             if i != 1:
                 arr[x][y] += 1
-                # print(x, y)
             else:
                 arr[x][y] = 0
-                # if x > 980 and y > 983:
-                #     print(x, y, arr[x][y])
 
-result_x = 0
-result_y = 0
+max_x = max_y = -1000
+min_x = min_y = 2002
 for x in range(2001):
     cnt = 0
     for y in range(2001):
         if arr[x][y] != 0:
-            # print(arr[x][y], x, y)
             cnt += 1
-            # print(x, y ,cnt)
-    result_x = result_x + 1 if cnt > 0 else result_x
-    result_y = cnt if cnt > result_y else result_y
+            max_y = y if y > max_y else max_y
+            min_y = y if y < min_y else min_y
 
-print(result_x * result_y)
+    max_x = x if cnt > 0 and x > max_x else max_x
+    min_x = x if cnt > 0 and x < min_x else min_x
+    
+# print(max_x+1, min_x, max_y+1, min_y)
+print((max_x+1-min_x) * (max_y+1-min_y))
