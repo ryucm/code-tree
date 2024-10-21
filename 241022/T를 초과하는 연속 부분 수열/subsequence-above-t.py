@@ -5,7 +5,7 @@ max_cnt = 0
 cnt = 0
 previous_num = 0
 for i in N:
-    if i > t and previous_num < i:
+    if i > t:
         cnt += 1
     else:
         cnt = 0
