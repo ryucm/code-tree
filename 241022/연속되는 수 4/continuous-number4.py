@@ -1,7 +1,7 @@
 N = int(input())
 
-max_cnt = 1
-cnt = 1
+max_cnt = 0
+cnt = 0
 previous_num = 0
 
 for i in range(N):
