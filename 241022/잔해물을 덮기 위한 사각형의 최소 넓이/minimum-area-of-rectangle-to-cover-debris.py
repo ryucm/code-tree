@@ -9,16 +9,19 @@ for i in range(2):
             
             if i != 1:
                 arr[x][y] += 1
+                # print(x, y)
             else:
                 arr[x][y] == 0
+                # print(x, y)
 
 result_x = 0
 result_y = 0
-for x in range(len(arr)):
+for x in range(2001):
     cnt = 0
-    for y in range(x):
-        if arr[x][y] == 1:
+    for y in range(2001):
+        if arr[x][y] != 0:
             cnt += 1
+            # print(x, y ,cnt)
     result_x = result_x + 1 if cnt > 0 else result_x
     result_y = cnt if cnt > result_y else result_y
 
