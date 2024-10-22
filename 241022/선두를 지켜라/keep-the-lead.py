@@ -17,24 +17,13 @@ winner = ''
 # print(arr_A[:20])
 # print(arr_B[:20])
 for i in range(len(arr_A)):
-    # print(winner)
-    if arr_A[i] != arr_B[i] and winner == '':
-        winner = 'A' if arr_A[i] > arr_B[i] else 'B'
-    elif arr_A[i] == arr_B[i] and winner == '':
-        continue
-    
-    if arr_A[i] + arr_A[i-1] > arr_B[i] + arr_B[i-1]:
-        if winner == 'A':
-            continue
-        else:
-            winner = 'A'
-            cnt += 1
-    elif arr_A[i] + arr_A[i-1] < arr_B[i] + arr_B[i-1]:
+    if arr_A[i] > arr_B[i]:
         if winner == 'B':
-            continue
-        else:
-            winner = 'B'
+            cnt +=1
+        winner = 'A'
+    elif arr_A[i] < arr_B[i]:
+        if winner == 'A':
             cnt += 1
+        winner = 'B'
             
-
 print(cnt)
