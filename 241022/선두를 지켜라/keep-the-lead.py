@@ -21,6 +21,9 @@ cnt = 0
 previous_value = ''
 for i in range(1001):
     temp = ''
+    if arr_A[i] + arr_A[i-1] == arr_B[i] + arr_B[i-1]:
+        continue
+
     if previous_value == '':
         previous_value = 'A' if arr_A[i] > arr_B[i] else 'B'
         continue
@@ -39,4 +42,6 @@ for i in range(1001):
             cnt += 1
             
     
+# print(arr_A[:20])
+# print(arr_B[:20])
 print(cnt)
