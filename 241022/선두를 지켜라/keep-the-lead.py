@@ -1,47 +1,40 @@
+def f(n):
+    arr, pos = [0], 1
+    for _ in range(n):
+        v, t = tuple(map(int, input().split()))
+        for i in range(t):
+            arr.append(arr[pos-1] + v)
+            pos += 1
+    return arr
+
 N, M = tuple(map(int, input().split()))
-arr_A = [0] * 1001
-arr_B = [0] * 1001
-cur_A = 0
-cur_B = 0
 
-for i in range(N):
-    v, t = tuple(map(int, input().split()))
-
-    for i in range(cur_A+1, t+cur_A+1):
-        arr_A[i] = arr_A[i-1] + v
-        cur_A += 1
-for i in range(M):
-    v, t = tuple(map(int, input().split()))
-
-    for i in range(cur_B+1, t+cur_B+1):
-        arr_B[i] = arr_B[i-1] + v
-        cur_B += 1
+arr_A, arr_B = f(N), f(M)
 
 cnt = 0
-previous_value = ''
-for i in range(cur_A):
-    temp = ''
-    if arr_A[i]== arr_B[i]:
-        continue
-
-    if previous_value == '':
-        previous_value = 'A' if arr_A[i] > arr_B[i] else 'B'
-        continue
-    
-    if arr_A[i] + arr_A[i-1] > arr_B[i] + arr_B[i-1]:
-        if previous_value == 'A':
-            continue
-        else:
-            previous_value = 'A'
-            cnt += 1
-    elif arr_A[i] + arr_A[i-1] < arr_B[i] + arr_B[i-1]:
-        if previous_value == 'B':
-            continue
-        else:
-            previous_value = 'B'
-            cnt += 1
-            
+winner = ''
     
 # print(arr_A[:20])
 # print(arr_B[:20])
+for i in range(len(arr_A)):
+    # print(winner)
+    if arr_A[i] != arr_B[i] and winner == '':
+        winner = 'A' if arr_A[i] > arr_B[i] else 'B'
+    elif arr_A[i] == arr_B[i] and winner == '':
+        continue
+    
+    if arr_A[i] + arr_A[i-1] > arr_B[i] + arr_B[i-1]:
+        if winner == 'A':
+            continue
+        else:
+            winner = 'A'
+            cnt += 1
+    elif arr_A[i] + arr_A[i-1] < arr_B[i] + arr_B[i-1]:
+        if winner == 'B':
+            continue
+        else:
+            winner = 'B'
+            cnt += 1
+            
+
 print(cnt)
