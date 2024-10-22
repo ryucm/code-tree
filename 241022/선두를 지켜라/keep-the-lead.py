@@ -19,7 +19,7 @@ for i in range(M):
 
 cnt = 0
 previous_value = ''
-for i in range(1001):
+for i in range(cur_A):
     temp = ''
     if arr_A[i]== arr_B[i]:
         continue
